@@ -9,7 +9,7 @@ public class CommonConstants {
     public static final String NAME = "Nombre: ";
     public static final String EMAIL = "Email: ";
     public static final String PASSWORD = "Contraseña: ";
-    public static final String CREATE_DATE = "Contraseña: ";
+    public static final String CREATE_DATE = "Creado el: ";
     public static final String TEMPORARY_NAME = "User Not Specify";
     public static final String TEMPORARY_EMAIL = "user@example.com";
     public static final String TEMPORARY_PASSWORD = "*******";
