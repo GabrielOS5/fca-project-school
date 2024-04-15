@@ -1,26 +1,41 @@
 package mx.com.unam.fca;
 
-import mx.com.unam.fca.model.User;
+import mx.com.unam.fca.model.Circle;
+import mx.com.unam.fca.model.Figure;
+import mx.com.unam.fca.model.Rectangle;
+import mx.com.unam.fca.model.Square;
+import mx.com.unam.fca.model.Triangle;
 
-import static mx.com.unam.fca.util.CommonConstants.CREATE_DATE;
-import static mx.com.unam.fca.util.CommonConstants.EMAIL;
-import static mx.com.unam.fca.util.CommonConstants.ID;
-import static mx.com.unam.fca.util.CommonConstants.NAME;
-import static mx.com.unam.fca.util.CommonConstants.PASSWORD;
+import static mx.com.unam.fca.util.CommonConstants.HYPOTENUSE;
+import static mx.com.unam.fca.util.CommonConstants.PERIMETER;
+import static mx.com.unam.fca.util.CommonConstants.AREA;
+import static mx.com.unam.fca.util.CommonConstants.TYPE;
 
 public class Application {
 
     public static void main(String[] args) {
-        User user = new User("Gabriel", "gabriel@example.com","Gabo05");
-        printInformation(user);
+        Figure circle = new Circle(2);
+        System.out.println("-- Circle --");
+        printInformation(circle);
+
+        Figure rectangle = new Rectangle(5, 2);
+        System.out.println("-- Rectangle --");
+        printInformation(rectangle);
+
+        Figure square = new Square(5);
+        System.out.println("-- Square --");
+        printInformation(square);
+
+        Triangle triangle = new Triangle(3, 4);
+        System.out.println("-- Triangle --");
+        printInformation(triangle);
+        System.out.println(HYPOTENUSE + triangle.getValueHypotenuse());
+        System.out.println(TYPE + triangle.getTypeTriangle(3, 4, 5));
     }
 
-    private static void printInformation(User user) {
-        System.out.println(ID.concat(user.getIdUser()));
-        System.out.println(NAME.concat(user.getNameUser()));
-        System.out.println(EMAIL.concat(user.getEmail()));
-        System.out.println(PASSWORD.concat(user.getPassword()));
-        System.out.println(CREATE_DATE.concat(user.getCreatedDate()));
+    private static void printInformation(Figure figure) {
+        System.out.println(PERIMETER + figure.perimeter());
+        System.out.println(AREA + figure.area());
     }
 
 }
